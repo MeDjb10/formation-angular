@@ -1,0 +1,13 @@
+.background{
+    border-radius: 10px;
+    padding-bottom: 20px;
+    background-color: black;
+}
+button{
+    width: 100px;
+    
+}
+input{
+    width: 300px;
+    margin-bottom: 10px;
+}

@@ -1,0 +1,58 @@
+<div class="hero overlay" style="background-image: url('assets/images/bg_3.jpg');">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-9 mx-auto text-center">
+                <h1 class="text-white">Sign Up</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="site-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-7">
+                <form [formGroup]="signupForm">
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" class="form-control" id="firstName" placeholder="Enter your first name" formControlName="firstName">
+                        <div class="text-danger" *ngIf="signupForm.controls['firstName'].invalid && (signupForm.controls['firstName'].dirty || signupForm.controls['firstName'].touched)">
+                            <div *ngIf="signupForm.controls['firstName'].errors?.['minlength']">minimum length is 3 </div>
+                            <div *ngIf="signupForm.controls['firstName'].errors?.['maxlength']">max length is 10 </div>
+                            <div *ngIf="signupForm.controls['firstName'].errors?.['required']">Req</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" class="form-control" id="lastName" placeholder="Enter your last name" formControlName="lastName">
+                        <div class="text-danger" *ngIf="signupForm.controls['lastName'].invalid && (signupForm.controls['lastName'].dirty || signupForm.controls['lastName'].touched)">
+                            <div *ngIf="signupForm.controls['lastName'].errors?.['minlength']">minimum length is 4 </div>
+                            <div *ngIf="signupForm.controls['lastName'].errors?.['maxlength']">max length is 7 </div>
+                            <div *ngIf="signupForm.controls['lastName'].errors?.['required']">Req</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter an email" formControlName="email">
+                        <div class="text-danger" *ngIf="signupForm.controls['email'].invalid && (signupForm.controls['email'].dirty || signupForm.controls['email'].touched)">
+                            <div *ngIf="signupForm.controls['email'].errors?.['email']">invalid</div>
+                            <div *ngIf="signupForm.controls['email'].errors?.['required']">Req</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" placeholder="Enter a password" formControlName="password">
+                        <div class="text-danger" *ngIf="signupForm.controls['password'].invalid && (signupForm.controls['password'].dirty || signupForm.controls['password'].touched)">
+                            <div *ngIf="signupForm.controls['password'].errors?.['minlength']">minimum length is 8 </div>
+                            <div *ngIf="signupForm.controls['password'].errors?.['maxlength']">max length is 25 </div>
+                            <div *ngIf="signupForm.controls['password'].errors?.['required']">Req</div>
+                        </div>
+                    </div>
+                    <div class="form-group text-center">
+                        <button type="button" (click)="signup()" class="btn btn-primary py-3 px-5">Sign Up</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
